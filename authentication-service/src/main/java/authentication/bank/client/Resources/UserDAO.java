@@ -4,22 +4,14 @@ import authentication.bank.client.Entities.User;
 import authentication.bank.client.Exceptions.UserNotFoundException;
 import javax.inject.Inject;
 import javax.persistence.*;
-import java.sql.SQLException;
 import java.util.List;
 
-public class UserResource implements IUserResource {
+public class UserDAO implements IUserDAO {
 
     @Inject
     private EntityManager entityManager;
 
-    public UserResource() {
-        //entityManager = entityManagerProducer.getEntityManager();
-    }
-
-    private String sqlQuery;
-
-    public void save(User user)
-    {
+    public void save(User user) {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
@@ -91,8 +83,7 @@ public class UserResource implements IUserResource {
         }
     }
 
-    public void delete(int id)
-    {
+    public void delete(int id) {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 

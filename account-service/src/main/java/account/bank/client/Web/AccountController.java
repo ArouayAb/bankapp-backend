@@ -1,19 +1,19 @@
 package account.bank.client.Web;
 
 import account.bank.client.Entities.Account;
-import account.bank.client.Resources.IAccountResource;
+import account.bank.client.Resources.IAccountDAO;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 @Path("/accounts")
-public class AccountService {
+public class AccountController {
 
     @Inject
-    private IAccountResource accountResource;
+    private IAccountDAO accountResource;
 
-    public AccountService(){
+    public AccountController(){
 
     }
 

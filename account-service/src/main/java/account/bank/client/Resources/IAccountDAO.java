@@ -4,7 +4,7 @@ import account.bank.client.Entities.Account;
 
 import java.util.List;
 
-public interface IAccountResource {
+public interface IAccountDAO {
     public void save(Account account);
     public Account findById(Long id);
     public List<Account> listAll();

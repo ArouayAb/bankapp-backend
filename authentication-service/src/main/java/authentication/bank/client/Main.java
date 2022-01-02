@@ -1,11 +1,7 @@
 package authentication.bank.client;
 
-import authentication.bank.client.Resources.UserResource;
-import com.sun.research.ws.wadl.Application;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.jboss.weld.environment.se.Weld;
-import org.jboss.weld.environment.se.WeldContainer;
 
 import java.io.IOException;
 import java.net.URI;

@@ -16,6 +16,10 @@ public class RefreshToken implements Serializable {
         super();
     }
 
+    public RefreshToken(String token){
+        this.token = token;
+    }
+
     public RefreshToken(String token, int user_id){
         this.token = token;
         this.user_id = user_id;

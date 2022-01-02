@@ -5,10 +5,10 @@ import account.bank.client.Entities.Account;
 import javax.persistence.*;
 import java.util.List;
 
-public class AccountResource implements IAccountResource{
+public class AccountDAO implements IAccountDAO {
     private EntityManager entityManager;
 
-    public AccountResource(){
+    public AccountDAO(){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU_ACC");
         entityManager = entityManagerFactory.createEntityManager();
     }
