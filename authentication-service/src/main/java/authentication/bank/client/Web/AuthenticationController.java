@@ -5,9 +5,8 @@ import authentication.bank.client.Entities.User;
 import authentication.bank.client.Exceptions.TokenNotFoundException;
 import authentication.bank.client.Exceptions.UserNotFoundException;
 import authentication.bank.client.Helpers.SecurityHelper;
-import authentication.bank.client.Resources.IRefreshTokenDAO;
-import authentication.bank.client.Resources.IUserDAO;
-import org.jose4j.jwt.JwtClaims;
+import authentication.bank.client.DAO.IRefreshTokenDAO;
+import authentication.bank.client.DAO.IUserDAO;
 import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.lang.JoseException;
 
@@ -20,11 +19,11 @@ import javax.ws.rs.core.Response;
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.sql.SQLException;
 import java.util.Base64;
 
+// AuthenticationController is responsible for authentication operations
 @Path("/users")
-public class UserController {
+public class AuthenticationController {
 
     // Dependency injection, to avoid tight coupling (Couplage fort)
     @Inject
@@ -38,39 +37,8 @@ public class UserController {
     private final KeyPair rsaJsonWebKey = SecurityHelper.generateKeyPair("RSA");
 
 
-    public UserController() throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public AuthenticationController() throws NoSuchAlgorithmException, InvalidKeySpecException {
 
-    }
-
-    // User creation endpoint
-    @POST
-    @PermitAll
-    @Path("create")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response createUser(User user) throws
-            NoSuchAlgorithmException,
-            InvalidKeySpecException
-    {
-        try{
-            // Check if the user already exist
-            userDAO.findByEmail(user.getEmail());
-            return Response.status(Response.Status.CONFLICT).build();
-        }
-        catch (UserNotFoundException e) {
-
-            // Hash user password for storage in database
-            byte[] salt = SecurityHelper.generateSalt();
-            user.setSalt(Base64.getEncoder().encodeToString(salt));
-            user.setPassword(
-                    Base64.getEncoder().encodeToString(SecurityHelper.generateHash(user.getPassword(),
-                    Base64.getDecoder().decode(user.getSalt())))
-            );
-
-            // Persist user
-            userDAO.save(user);
-            return Response.ok().build();
-        }
     }
 
     // Authentication endpoint
@@ -87,7 +55,7 @@ public class UserController {
         User user;
         try{
             // Finding user in question from database
-            user = userDAO.findByEmail(credential.getEmail());
+            user = userDAO.findByNoCompte(credential.getNoCompte());
 
             // Check if password given match password (after unhashing) from database
             if (!user.getPassword().equals(Base64.getEncoder().encodeToString(SecurityHelper.generateHash(

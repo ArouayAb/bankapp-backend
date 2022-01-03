@@ -9,15 +9,17 @@ public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // For clarity's sake
     private Long accountNumber;
-    private Long holderId;
+    // Foreign key
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     private String holderName;
     private double balance;
     private double maxOverDraft;
     private double maxDebitAmount;
 
-    public Account(Long accountNumber, Long holderId, String holderName, double balance, double maxOverDraft, double maxDebitAmount) {
+    public Account(Long accountNumber, String holderName, double balance, double maxOverDraft, double maxDebitAmount) {
         this.accountNumber = accountNumber;
-        this.holderId = holderId;
         this.holderName = holderName;
         this.balance = balance;
         this.maxOverDraft = maxOverDraft;
@@ -26,14 +28,6 @@ public class Account implements Serializable {
 
     public Account() {
         super();
-    }
-
-    public Long getHolderId() {
-        return holderId;
-    }
-
-    public void setHolderId(Long holderId) {
-        this.holderId = holderId;
     }
 
     public Long getAccountNumber() {

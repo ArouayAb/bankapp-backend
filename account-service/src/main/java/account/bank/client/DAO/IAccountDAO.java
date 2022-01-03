@@ -1,4 +1,4 @@
-package account.bank.client.Resources;
+package account.bank.client.DAO;
 
 import account.bank.client.Entities.Account;
 

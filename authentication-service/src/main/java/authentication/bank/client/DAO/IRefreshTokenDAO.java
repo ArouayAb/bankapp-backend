@@ -1,4 +1,4 @@
-package authentication.bank.client.Resources;
+package authentication.bank.client.DAO;
 
 
 import authentication.bank.client.Entities.RefreshToken;

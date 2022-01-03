@@ -1,17 +1,10 @@
-package authentication.bank.client.Resources;
+package authentication.bank.client.DAO;
 
 import authentication.bank.client.Entities.RefreshToken;
-import authentication.bank.client.Entities.User;
-import authentication.bank.client.Exceptions.TokenNotFoundException;
-import authentication.bank.client.Exceptions.UserNotFoundException;
-import authentication.bank.client.Helpers.DataProviderHelper;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import java.sql.Ref;
-import java.sql.SQLException;
-import java.util.List;
 
 // RefreshToken resource class managing users (Basic CRUD operations)
 // N.B. We can use PreparedStatements for better results

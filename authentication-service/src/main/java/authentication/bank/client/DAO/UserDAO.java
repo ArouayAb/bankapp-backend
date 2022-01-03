@@ -1,4 +1,4 @@
-package authentication.bank.client.Resources;
+package authentication.bank.client.DAO;
 
 import authentication.bank.client.Entities.User;
 import authentication.bank.client.Exceptions.UserNotFoundException;
@@ -47,18 +47,18 @@ public class UserDAO implements IUserDAO {
         return user;
     }
 
-    public User findByEmail(String email) throws
+    public User findByNoCompte(String noCompte) throws
             UserNotFoundException
     {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
         try{
-            Query query = entityManager.createQuery("select u from User u where u.email like :em");
-            query.setParameter("em", email);
+            Query query = entityManager.createQuery("select u from User u where u.noCompte like :nc");
+            query.setParameter("nc", noCompte);
             transaction.commit();
             if (query.getResultList().size() == 0) {
-                throw new UserNotFoundException(email);
+                throw new UserNotFoundException(noCompte);
             }
             return (User) query.getResultList().get(0);
         } catch (UserNotFoundException ue) {
