@@ -2,15 +2,17 @@ package account.bank.client.Resources;
 
 import account.bank.client.Entities.Account;
 
+import javax.inject.Inject;
 import javax.persistence.*;
 import java.util.List;
 
 public class AccountDAO implements IAccountDAO {
+
+    @Inject
     private EntityManager entityManager;
 
     public AccountDAO(){
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU_ACC");
-        entityManager = entityManagerFactory.createEntityManager();
+
     }
 
     public void save(Account account){
