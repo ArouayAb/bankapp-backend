@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 @ApplicationScoped
 public class EntityManagerProducer {
 
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU_AUTH");
+    private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PU_AUTH");
 
     @Produces
     public EntityManager getEntityManager(){
