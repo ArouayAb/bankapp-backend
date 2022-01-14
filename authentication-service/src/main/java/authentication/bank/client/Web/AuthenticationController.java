@@ -4,6 +4,7 @@ import authentication.bank.client.Entities.RefreshToken;
 import authentication.bank.client.Entities.User;
 import authentication.bank.client.Exceptions.TokenNotFoundException;
 import authentication.bank.client.Exceptions.UserNotFoundException;
+import authentication.bank.client.Helpers.MessageConsumer;
 import authentication.bank.client.Helpers.SecurityHelper;
 import authentication.bank.client.DAO.IRefreshTokenDAO;
 import authentication.bank.client.DAO.IUserDAO;
@@ -49,6 +50,10 @@ public class AuthenticationController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        MessageConsumer consumer = new MessageConsumer();
+        consumer.asyncSyncronizeUser(userDAO);
+
     }
 
     // Authentication endpoint
