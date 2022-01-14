@@ -8,6 +8,7 @@ import authentication.bank.client.Helpers.MessageConsumer;
 import authentication.bank.client.Helpers.SecurityHelper;
 import authentication.bank.client.DAO.IRefreshTokenDAO;
 import authentication.bank.client.DAO.IUserDAO;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.lang.JoseException;
 
@@ -17,6 +18,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
+import java.io.File;
+import java.io.IOException;
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -39,8 +42,18 @@ public class AuthenticationController {
 
 
     public AuthenticationController() throws NoSuchAlgorithmException, InvalidKeySpecException {
+        try {
+            //all things objectmapper don't seem to be working atm
+            ObjectMapper mapper = new ObjectMapper();
+            File file = new File("../../../../../../../../Security/RSAKeyPair.json");
+            mapper.writeValue(file, rsaJsonWebKey);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         MessageConsumer consumer = new MessageConsumer();
         consumer.asyncSyncronizeUser(userDAO);
+
     }
 
     // Authentication endpoint
@@ -225,6 +238,37 @@ public class AuthenticationController {
                 return Response.status(401, "Token Expired").build();
             }
             return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
+    }
+
+    //Temporary until the two services are synchronized when a new user is being created
+    @POST
+    @PermitAll
+    @Path("tempCreate")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response createUser(User user) throws
+            NoSuchAlgorithmException,
+            InvalidKeySpecException
+    {
+        try{
+            // Check if the user already exist
+            userDAO.findByNoCompte(user.getNoCompte());
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+        catch (UserNotFoundException e) {
+
+            // Hash user password for storage in database
+            byte[] salt = SecurityHelper.generateSalt();
+            user.setSalt(Base64.getEncoder().encodeToString(salt));
+            user.setPassword(
+                    Base64.getEncoder().encodeToString(SecurityHelper.generateHash(user.getPassword(),
+                            Base64.getDecoder().decode(user.getSalt())))
+            );
+
+            // Persist user
+            userDAO.save(user);
+            return Response.ok().build();
         }
     }
 }

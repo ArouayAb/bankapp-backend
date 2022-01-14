@@ -1,6 +1,7 @@
 package account.bank.client.DAO;
 
 import account.bank.client.Entities.Account;
+import account.bank.client.Exceptions.AccountNotFoundException;
 
 import javax.inject.Inject;
 import javax.persistence.*;
@@ -41,6 +42,25 @@ public class AccountDAO implements IAccountDAO {
             e.printStackTrace();
         }
         return account;
+    }
+
+    public List<Account> findByUserId(int id){
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        Account account = null;
+        try{
+            Query query = entityManager.createQuery("select a from Account a WHERE a.user.id = :n");
+            query.setParameter("n", id);
+            transaction.commit();
+            if (query.getResultList().size() == 0) {
+                throw new AccountNotFoundException(Integer.toString(id));
+            }
+            return query.getResultList();
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public List<Account> listAll(){
