@@ -1,11 +1,26 @@
 package account.bank.client.Web;
 
+import account.bank.client.DAO.IUserDAO;
+import account.bank.client.DAO.UserDAO;
 import account.bank.client.Entities.Account;
 import account.bank.client.DAO.IAccountDAO;
+import account.bank.client.Entities.User;
+import account.bank.client.Exceptions.UserNotFoundException;
+import account.bank.client.Helpers.SecurityHelper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.jose4j.jwt.JwtClaims;
+import org.jose4j.jwt.consumer.InvalidJwtException;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.Response;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Serializable;
+import java.security.KeyPair;
+import java.util.List;
 
 // This Controller is responsible for account operations
 @Path("/accounts")
@@ -14,16 +29,55 @@ public class AccountController {
     @Inject
     private IAccountDAO accountDAO;
 
+    @Inject
+    private IUserDAO userDAO;
+
     public AccountController(){
 
     }
 
-    @POST
-    @Path("create")
+    @GET
+    @Path("get-infos")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response createAccount(Account account) {
-        accountDAO.save(account);
-        return Response.ok().build();
+    public Response getInfos(@CookieParam("access_token") Cookie cookie) {
+        try {
+            //all things objectmapper don't seem to be working atm
+            ObjectMapper mapper = new ObjectMapper();
+            File file = new File("../../../../../../../../Security/RSAKeyPair.json");
+            KeyPair keypair = mapper.readValue(file, KeyPair.class);
+            JwtClaims jwtClaims = SecurityHelper.processJwt(keypair, cookie.getValue());
+            int id = (int) jwtClaims.getClaimValue("id");
+            List<Account> accounts = accountDAO.findByUserId(id);
+            class Infos implements Serializable {
+                String fullName;
+                String phone;
+                String cin;
+                String birthDate;
+                String email;
+                String noCompte;
+                String rib;
+                double solde;
+
+                public Infos(Account account) {
+                    this.fullName = account.getUser().getFullName();
+                    this.phone = account.getUser().getPhone();
+                    this.cin = account.getUser().getCin();
+                    this.birthDate = account.getUser().getBirthDate();
+                    this.email = account.getUser().getEmail();
+                    this.noCompte = account.getAccountNumber().toString();
+                    this.rib = account.getRib();
+                    this.solde = account.getBalance();
+                }
+            }
+            return Response.ok().entity(new Infos(accounts.get(0))).build();
+        } catch(IOException e) {
+            e.printStackTrace();
+            return Response.serverError().build();
+        } catch (InvalidJwtException e) {
+            if (e.hasExpired())
+            return Response.status(420,"Token Expired").build();
+            else return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
     }
 }
