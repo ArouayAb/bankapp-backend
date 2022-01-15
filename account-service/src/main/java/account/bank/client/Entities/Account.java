@@ -13,6 +13,7 @@ public class Account implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    private String rib;
     private String holderName;
     private double balance;
     private double maxOverDraft;
@@ -24,6 +25,32 @@ public class Account implements Serializable {
         this.balance = balance;
         this.maxOverDraft = maxOverDraft;
         this.maxDebitAmount = maxDebitAmount;
+    }
+
+    public Account(Long accountNumber, User user, String rib, String holderName, double balance, double maxOverDraft, double maxDebitAmount) {
+        this.accountNumber = accountNumber;
+        this.user = user;
+        this.rib = rib;
+        this.holderName = holderName;
+        this.balance = balance;
+        this.maxOverDraft = maxOverDraft;
+        this.maxDebitAmount = maxDebitAmount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getRib() {
+        return rib;
+    }
+
+    public void setRib(String rib) {
+        this.rib = rib;
     }
 
     public Account() {

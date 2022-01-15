@@ -2,6 +2,7 @@ package account.bank.client.Web;
 
 import account.bank.client.DAO.IAccountDAO;
 import account.bank.client.DAO.IUserDAO;
+import account.bank.client.Entities.Account;
 import account.bank.client.Entities.User;
 import account.bank.client.Exceptions.UserNotFoundException;
 import account.bank.client.Helpers.SecurityHelper;
@@ -55,8 +56,8 @@ public class UserController {
 
             // Persist user
             userDAO.save(user);
+            accountDAO.save(new Account(null,user,"00000000001",user.getFullName(),0,4000,4000));
             return Response.ok().build();
         }
     }
-
 }
