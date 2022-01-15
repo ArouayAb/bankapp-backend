@@ -18,8 +18,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Paths;
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -44,9 +44,13 @@ public class AuthenticationController {
     public AuthenticationController() throws NoSuchAlgorithmException, InvalidKeySpecException {
         try {
             //all things objectmapper don't seem to be working atm
-            ObjectMapper mapper = new ObjectMapper();
-            File file = new File("../../../../../../../../Security/RSAKeyPair.json");
-            mapper.writeValue(file, rsaJsonWebKey);
+            java.nio.file.Path pathAbsolute = Paths.get("/home/asus_/Documents/Project/Java/bankapp-backend/Security/RSAKeyPair.bin");
+
+            FileOutputStream fileOutputStream = new FileOutputStream(pathAbsolute.toString());
+            ObjectOutputStream objectOutputStream =  new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(rsaJsonWebKey);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

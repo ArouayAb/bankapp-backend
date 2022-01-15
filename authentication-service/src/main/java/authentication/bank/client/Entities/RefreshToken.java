@@ -1,7 +1,5 @@
 package authentication.bank.client.Entities;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

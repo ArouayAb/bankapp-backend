@@ -9,17 +9,18 @@ import account.bank.client.Exceptions.UserNotFoundException;
 import account.bank.client.Helpers.SecurityHelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jose4j.jwt.JwtClaims;
+import org.jose4j.jwt.consumer.ErrorCodeValidator;
 import org.jose4j.jwt.consumer.InvalidJwtException;
+import org.jose4j.jwt.consumer.JwtContext;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.Response;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
+import java.nio.file.Paths;
 import java.security.KeyPair;
+import java.util.ArrayList;
 import java.util.List;
 
 // This Controller is responsible for account operations
@@ -42,12 +43,17 @@ public class AccountController {
     @Produces("application/json")
     public Response getInfos(@CookieParam("access_token") Cookie cookie) {
         try {
-            //all things objectmapper don't seem to be working atm
-            ObjectMapper mapper = new ObjectMapper();
-            File file = new File("../../../../../../../../Security/RSAKeyPair.json");
-            KeyPair keypair = mapper.readValue(file, KeyPair.class);
-            JwtClaims jwtClaims = SecurityHelper.processJwt(keypair, cookie.getValue());
+            if (cookie == null) throw new InvalidJwtException("Not provided", new ArrayList<ErrorCodeValidator.Error>(), new JwtContext(null, null));
+
+            java.nio.file.Path pathAbsolute = Paths.get("/home/asus_/Documents/Project/Java/bankapp-backend/Security/RSAKeyPair.bin");
+
+            FileInputStream fileInputStream = new FileInputStream(pathAbsolute.toString());
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            KeyPair rsaJsonWebKey = (KeyPair) objectInputStream.readObject();
+
+            JwtClaims jwtClaims = SecurityHelper.processJwt(rsaJsonWebKey, cookie.getValue());
             int id = (int) jwtClaims.getClaimValue("id");
+
             List<Account> accounts = accountDAO.findByUserId(id);
             class Infos implements Serializable {
                 String fullName;
@@ -71,7 +77,7 @@ public class AccountController {
                 }
             }
             return Response.ok().entity(new Infos(accounts.get(0))).build();
-        } catch(IOException e) {
+        } catch(IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return Response.serverError().build();
         } catch (InvalidJwtException e) {

@@ -1,7 +1,5 @@
 package authentication.bank.client.Entities;
 
-import org.hibernate.annotations.ColumnDefault;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

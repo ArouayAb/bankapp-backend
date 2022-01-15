@@ -19,14 +19,14 @@ public class MessageProducer {
         try {
             this.connection = connectionFactory.newConnection();
             this.channel = this.connection.createChannel();
-            this.channel.queueDeclare("User_Sync", false, true, false, null);
+            this.channel.queueDeclare("User_Sync", false, false, false, null);
 
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
     }
 
-    public void asyncPublishUserAuthInfo(User user, Account account) {
+    public void publishUserAuthInfo(User user, Account account) {
         try {
             class UserAuth{
                 private int id;

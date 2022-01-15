@@ -5,6 +5,7 @@ import account.bank.client.DAO.IUserDAO;
 import account.bank.client.Entities.Account;
 import account.bank.client.Entities.User;
 import account.bank.client.Exceptions.UserNotFoundException;
+import account.bank.client.Helpers.MessageProducer;
 import account.bank.client.Helpers.SecurityHelper;
 
 import javax.annotation.security.PermitAll;
@@ -37,8 +38,7 @@ public class UserController {
     @Produces("application/json")
     public Response createUser(User user) throws
             NoSuchAlgorithmException,
-            InvalidKeySpecException
-    {
+            InvalidKeySpecException, UserNotFoundException {
         try{
             // Check if the user already exist
             userDAO.findByEmail(user.getEmail());
@@ -57,6 +57,14 @@ public class UserController {
             // Persist user
             userDAO.save(user);
             accountDAO.save(new Account(null,user,"00000000001",user.getFullName(),0,4000,4000));
+
+            User fullUser = userDAO.findByEmail(user.getEmail());
+            Account fullAccount = accountDAO.findByUserId(fullUser.getId()).get(0);
+
+            MessageProducer producer = new MessageProducer();
+            producer.publishUserAuthInfo(fullUser, fullAccount);
+
+
             return Response.ok().build();
         }
     }

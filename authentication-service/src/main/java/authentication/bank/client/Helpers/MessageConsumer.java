@@ -20,7 +20,7 @@ public class MessageConsumer {
         try {
             this.connection = connectionFactory.newConnection();
             this.channel = this.connection.createChannel();
-            this.channel.queueDeclare("User_Sync", false, true, false, null);
+            this.channel.queueDeclare("User_Sync", false, false, false, null);
 
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
@@ -29,9 +29,13 @@ public class MessageConsumer {
 
     public void asyncSyncronizeUser(IUserDAO userDAO) {
         try {
-            this.channel.basicConsume("User_Sync", true, (consumerTag, message) -> {
+            this.channel.basicConsume("User_Sync", false, (consumerTag, message) -> {
                 Gson gson = new Gson();
                 User user = gson.fromJson(new String(message.getBody(), StandardCharsets.UTF_8), User.class);
+                System.out.println(user.getId());
+                System.out.println(user.getNoCompte());
+                System.out.println(user.getPassword());
+                System.out.println(user.getSalt());
                 userDAO.update(user);
             }, consumerTag -> {});
         } catch (IOException e) {
