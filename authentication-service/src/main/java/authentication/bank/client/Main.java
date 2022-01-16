@@ -31,6 +31,7 @@ public class Main {
         l.addHandler(ch);
 
         startServer();
+
         Weld weld = new Weld();
         WeldContainer container = weld.initialize();
         MessageConsumer consumer = container.select(MessageConsumer.class).get();

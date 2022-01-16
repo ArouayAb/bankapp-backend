@@ -4,11 +4,9 @@ import authentication.bank.client.Entities.RefreshToken;
 import authentication.bank.client.Entities.User;
 import authentication.bank.client.Exceptions.TokenNotFoundException;
 import authentication.bank.client.Exceptions.UserNotFoundException;
-import authentication.bank.client.Helpers.MessageConsumer;
 import authentication.bank.client.Helpers.SecurityHelper;
 import authentication.bank.client.DAO.IRefreshTokenDAO;
 import authentication.bank.client.DAO.IUserDAO;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.lang.JoseException;
 
@@ -108,7 +106,7 @@ public class AuthenticationController {
     }
 
     // Refresh access token in case the token expires using the refresh token
-    @POST
+    @GET
     @Path("refresh")
     @PermitAll
     @Produces("application/json")

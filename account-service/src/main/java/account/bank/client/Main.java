@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    public static final String BASE_URI = "http://localhost:8080/account_service/";
+    public static final String BASE_URI = "http://localhost:8079/account_service/";
 
     public static void startServer() {
         final ResourceConfig rc = new ResourceConfig().packages("account.bank.client");
@@ -27,6 +27,7 @@ public class Main {
         l.addHandler(ch);
 
         startServer();
+
         System.out.printf("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...%n", BASE_URI);
         System.in.read();
