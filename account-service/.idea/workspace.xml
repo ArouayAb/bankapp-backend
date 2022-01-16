@@ -5,14 +5,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="get-infos endpoint can now send result body">
+      <change afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/DAO/ITransactionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/DAO/TransactionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/Entities/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/Exceptions/TransactionNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_12_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_enterprise_jakarta_enterprise_cdi_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_inject_jakarta_inject_api_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_11_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_bitbucket_b_c_jose4j_0_7_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_framework_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_server_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_hk2_external_jakarta_inject_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_grizzly2_http_2_33.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_server_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_inject_jersey_cdi2_se_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_6_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_classfilewriter_jboss_classfilewriter_1_2_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_jandex_2_2_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_3_spec_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_spec_javax_el_jboss_el_api_3_0_spec_2_0_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_spec_javax_interceptor_jboss_interceptors_api_1_2_spec_2_0_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_environment_weld_environment_common_3_1_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_probe_weld_probe_core_3_1_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_se_weld_se_core_3_1_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_weld_api_3_1_SP4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_weld_core_impl_3_1_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jboss_weld_weld_spi_3_1_SP4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/JerseySE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_15_22__3_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_15_22__3_38_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/account/bank/client/Entities/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/Entities/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/account/bank/client/Web/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/Web/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/account/bank/client/Web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/account/bank/client/Web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/bank/client/Entities/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/bank/client/Entities/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/bank/client/Web/AccountController$1Infos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/bank/client/Web/AccountController$1Infos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/bank/client/Web/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/bank/client/Web/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/bank/client/Web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/bank/client/Web/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/authentication-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/jpa-buddy-datasource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/java/authentication/bank/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/java/authentication/bank/client/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/java/authentication/bank/client/Web/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/java/authentication/bank/client/Web/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/authentication/bank/client/Web/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/classes/authentication/bank/client/Web/AuthenticationController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +101,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +118,22 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -48,11 +144,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/account/bank/client/DAO" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Compressed/DL1 - Ahmed Annahir" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -76,8 +178,10 @@
   </component>
   <component name="RunManager">
     <configuration name="account-service" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="account.bank.client.Main" />
-      <module name="account-service" />
+      <module name="JerseySE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,6 +212,7 @@
       <workItem from="1642280182215" duration="2616000" />
       <workItem from="1642284123644" duration="5586000" />
       <workItem from="1642338879531" duration="3299000" />
+      <workItem from="1642343083428" duration="23481000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring project structure">
       <created>1641246420594</created>
@@ -167,24 +272,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Refactoring project structure" />
     <MESSAGE value="Adding User syncronization" />
     <MESSAGE value="Fixed rsa key serialization and rabbitmq messaging account service side" />
     <MESSAGE value="User syncronization done" />
     <MESSAGE value="get-infos endpoint can now send result body" />
     <option name="LAST_COMMIT_MESSAGE" value="get-infos endpoint can now send result body" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/account/bank/client/Web/AccountController.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

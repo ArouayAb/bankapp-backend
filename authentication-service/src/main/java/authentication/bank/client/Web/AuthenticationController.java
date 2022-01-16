@@ -45,7 +45,7 @@ public class AuthenticationController {
     public AuthenticationController() throws NoSuchAlgorithmException, InvalidKeySpecException {
         try {
             //all things objectmapper don't seem to be working atm
-            java.nio.file.Path pathAbsolute = Paths.get("/home/asus_/Documents/Project/Java/bankapp-backend/Security/RSAKeyPair.bin");
+            java.nio.file.Path pathAbsolute = Paths.get("E:/Backup/Documents/CI2/Other/bankapp-backend/Security/RSAKeyPair.bin");
 
             FileOutputStream fileOutputStream = new FileOutputStream(pathAbsolute.toString());
             ObjectOutputStream objectOutputStream =  new ObjectOutputStream(fileOutputStream);

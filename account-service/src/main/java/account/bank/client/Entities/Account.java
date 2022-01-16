@@ -2,6 +2,7 @@ package account.bank.client.Entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="accounts")
