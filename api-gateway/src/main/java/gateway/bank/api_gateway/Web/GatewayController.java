@@ -41,7 +41,9 @@ public class GatewayController {
                     .path(this.routes.accountService.get("user path"))
                     .path(this.routes.accountService.get("creation path"));
             Invocation.Builder invocationBuilder = webTarget.request("application/json");
-            response = invocationBuilder.post(Entity.entity(payload, "application/json"));
+            response = invocationBuilder
+                    .header("Authorization", "Gateway")
+                    .post(Entity.entity(payload, "application/json"));
 
             return response;
         } catch (ProcessingException e) {
@@ -65,7 +67,9 @@ public class GatewayController {
                     .path(this.routes.authenticationService.get("user path"))
                     .path(this.routes.authenticationService.get("authentication path"));
             Invocation.Builder invocationBuilder = webTarget.request("application/json");
-            response = invocationBuilder.post(Entity.entity(payload, "application/json"));
+            response = invocationBuilder
+                    .header("Authorization", "Gateway")
+                    .post(Entity.entity(payload, "application/json"));
 
             return response;
         } catch (ProcessingException e) {
@@ -89,7 +93,11 @@ public class GatewayController {
                     .path(this.routes.authenticationService.get("user path"))
                     .path(this.routes.authenticationService.get("refresh path"));
             Invocation.Builder invocationBuilder = webTarget.request("application/json");
-            response = invocationBuilder.cookie(ratCookie).cookie(rrtCookie).get();
+            response = invocationBuilder
+                    .header("Authorization", "Gateway")
+                    .cookie(ratCookie)
+                    .cookie(rrtCookie)
+                    .get();
 
             return response;
         } catch (ProcessingException e) {
@@ -113,7 +121,10 @@ public class GatewayController {
                     .path(this.routes.accountService.get("account path"))
                     .path(this.routes.accountService.get("get-infos path"));
             Invocation.Builder invocationBuilder = webTarget.request("application/json");
-            response = invocationBuilder.cookie(cookie).get();
+            response = invocationBuilder
+                    .header("Authorization", "Gateway")
+                    .cookie(cookie)
+                    .get();
 
             return response;
         } catch (ProcessingException e) {

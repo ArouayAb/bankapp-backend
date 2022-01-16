@@ -59,7 +59,6 @@ public class AuthenticationController {
 
     // Authentication endpoint
     @POST
-    @PermitAll
     @Path("authenticate")
     @Consumes("application/json")
     @Produces("application/json")
@@ -108,7 +107,6 @@ public class AuthenticationController {
     // Refresh access token in case the token expires using the refresh token
     @GET
     @Path("refresh")
-    @PermitAll
     @Produces("application/json")
     @Consumes("application/json")
     public Response refreshToken(@CookieParam("access_token") Cookie ratCookie, @CookieParam("refresh_token") Cookie rrtCookie) throws
