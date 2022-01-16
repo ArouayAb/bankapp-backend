@@ -2,6 +2,7 @@ package account.bank.client.Helpers;
 
 import account.bank.client.Entities.Account;
 import account.bank.client.Entities.User;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -29,10 +30,10 @@ public class MessageProducer {
     public void publishUserAuthInfo(User user, Account account) {
         try {
             class UserAuth{
-                private int id;
-                private String noCompte;
-                private String password;
-                private String salt;
+                public int id;
+                public String noCompte;
+                public String password;
+                public String salt;
 
                 public UserAuth(int id, String noCompte, String password, String salt) {
                     this.id = id;
@@ -41,6 +42,37 @@ public class MessageProducer {
                     this.salt = salt;
                 }
 
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public String getNoCompte() {
+                    return noCompte;
+                }
+
+                public void setNoCompte(String noCompte) {
+                    this.noCompte = noCompte;
+                }
+
+                public String getPassword() {
+                    return password;
+                }
+
+                public void setPassword(String password) {
+                    this.password = password;
+                }
+
+                public String getSalt() {
+                    return salt;
+                }
+
+                public void setSalt(String salt) {
+                    this.salt = salt;
+                }
             }
 
             UserAuth userAuth = new UserAuth(
@@ -50,8 +82,8 @@ public class MessageProducer {
                     user.getSalt()
             );
 
-            Gson gson = new Gson();
-            String messageJson = gson.toJson(userAuth);
+            ObjectMapper mapper = new ObjectMapper();
+            String messageJson = mapper.writeValueAsString(userAuth);
             channel.basicPublish("", "User_Sync", false, null, messageJson.getBytes());
 
         } catch (IOException e) {
