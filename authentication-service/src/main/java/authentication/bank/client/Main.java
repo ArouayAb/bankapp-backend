@@ -35,7 +35,6 @@ public class Main {
         WeldContainer container = weld.initialize();
         MessageConsumer consumer = container.select(MessageConsumer.class).get();
         consumer.asyncSyncronizeUser();
-
         System.out.printf("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...%n", BASE_URI);
         System.in.read();
