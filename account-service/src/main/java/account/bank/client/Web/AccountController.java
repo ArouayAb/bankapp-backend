@@ -39,6 +39,7 @@ public class AccountController {
 
     @GET
     @Path("get-infos")
+    @Consumes("application/json")
     @Produces("application/json")
     public Response getInfos(@CookieParam("access_token") Cookie cookie) {
         try {
@@ -51,9 +52,9 @@ public class AccountController {
             KeyPair rsaJsonWebKey = (KeyPair) objectInputStream.readObject();
 
             JwtClaims jwtClaims = SecurityHelper.processJwt(rsaJsonWebKey, cookie.getValue());
-            Long id = (Long) jwtClaims.getClaimValue("id");
+            int id = (int) jwtClaims.getClaimValue("id");
 
-            List<Account> accounts = accountDAO.findByUserId(id.intValue());
+            List<Account> accounts = accountDAO.findByUserId(id);
             class Infos implements Serializable {
                 String fullName;
                 String phone;
@@ -75,8 +76,7 @@ public class AccountController {
                     this.solde = account.getBalance();
                 }
             }
-            Infos infos = new Infos(accounts.get(0));
-            return Response.ok(infos).build();
+            return Response.ok().entity(new Infos(accounts.get(0))).build();
         } catch(IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return Response.serverError().build();

@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Table(name="refresh_tokens")
 public class RefreshToken implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_id;
     private String token;
 

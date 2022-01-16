@@ -29,7 +29,6 @@ import java.util.Base64;
 @Path("/users")
 public class AuthenticationController {
 
-
     // Dependency injection, to avoid tight coupling (Couplage fort)
     @Inject
     private IUserDAO userDAO;
@@ -56,6 +55,8 @@ public class AuthenticationController {
             e.printStackTrace();
         }
 
+        MessageConsumer consumer = new MessageConsumer();
+        consumer.asyncSyncronizeUser(userDAO);
 
     }
 
@@ -86,7 +87,7 @@ public class AuthenticationController {
             RefreshToken tokenFound = tokenDAO.findById(user.getId());
 
             // Generation a jwt pair (access token, refresh token)
-            RefreshToken refreshToken = new RefreshToken(SecurityHelper.generateRefreshToken(), user.getId());
+            RefreshToken refreshToken = new RefreshToken(SecurityHelper.generateRefreshToken());
             String jwt = SecurityHelper.generateJwt(rsaJsonWebKey, user.getId());
 
             // Persisting the new refresh token in database
