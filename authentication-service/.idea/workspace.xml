@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="git madness" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22yMboihGTnX2rIjzT8LpDpeerN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/authentication/bank/client" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/rest" />
+      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exemple" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="authentication-service" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="authentication.bank.client.Main" />
+      <module name="JerseySE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="" />
+      <created>1640805452445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640805452445</updated>
+      <workItem from="1640805453964" duration="4823000" />
+      <workItem from="1640810447433" duration="432000" />
+      <workItem from="1640810982708" duration="1042000" />
+      <workItem from="1640812053881" duration="5213000" />
+      <workItem from="1640880569925" duration="5185000" />
+      <workItem from="1640885862834" duration="17979000" />
+      <workItem from="1640945007409" duration="1215000" />
+      <workItem from="1640948877483" duration="10000" />
+      <workItem from="1640948953321" duration="1092000" />
+      <workItem from="1640961438343" duration="1910000" />
+      <workItem from="1640964669089" duration="29000" />
+      <workItem from="1640964835297" duration="6000" />
+      <workItem from="1640967201965" duration="734000" />
+      <workItem from="1640989772716" duration="92000" />
+      <workItem from="1641043673769" duration="187000" />
+      <workItem from="1641142785037" duration="3737000" />
+      <workItem from="1641230766681" duration="119000" />
+      <workItem from="1641230911672" duration="668000" />
+      <workItem from="1641235710496" duration="8212000" />
+      <workItem from="1641657318023" duration="536000" />
+      <workItem from="1641825406667" duration="368000" />
+      <workItem from="1642010300105" duration="15000" />
+      <workItem from="1642188522262" duration="5790000" />
+      <workItem from="1642195420531" duration="533000" />
+      <workItem from="1642257616780" duration="5840000" />
+      <workItem from="1642280113408" duration="865000" />
+      <workItem from="1642284811652" duration="9350000" />
+      <workItem from="1642338879531" duration="2861000" />
+    </task>
+    <task id="LOCAL-00001" summary="AuthenticationService can now consume user informations">
+      <created>1642192106013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642192106017</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git madness">
+      <created>1642257686555</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642257686555</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="AuthenticationService can now consume user informations" />
+    <MESSAGE value="git madness" />
+    <option name="LAST_COMMIT_MESSAGE" value="git madness" />
+  </component>
+</project>

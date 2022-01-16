@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="get-infos endpoint can now send result body" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22yMboihGTnX2rIjzT8LpDpeerN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/account/bank/client/DAO" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/account/bank/client/DAO" />
+      <recent name="$PROJECT_DIR$/src/main/java/account/bank/client" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/rest" />
+      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exemple" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="account.bank.client.Helpers" />
+      <recent name="account.bank.client.Entities" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="account-service" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="account.bank.client.Main" />
+      <module name="account-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="" />
+      <created>1640805452445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640805452445</updated>
+      <workItem from="1640805453964" duration="4823000" />
+      <workItem from="1640810447433" duration="432000" />
+      <workItem from="1640817233870" duration="27000" />
+      <workItem from="1640880986882" duration="4154000" />
+      <workItem from="1640885781801" duration="31000" />
+      <workItem from="1641143951778" duration="1111000" />
+      <workItem from="1641230764260" duration="780000" />
+      <workItem from="1641235710474" duration="6844000" />
+      <workItem from="1641244933401" duration="1991000" />
+      <workItem from="1642010319302" duration="1342000" />
+      <workItem from="1642063180464" duration="32000" />
+      <workItem from="1642188502073" duration="3829000" />
+      <workItem from="1642195447939" duration="508000" />
+      <workItem from="1642257445052" duration="4940000" />
+      <workItem from="1642280182215" duration="2616000" />
+      <workItem from="1642284123644" duration="5586000" />
+      <workItem from="1642338879531" duration="2386000" />
+    </task>
+    <task id="LOCAL-00001" summary="Refactoring project structure">
+      <created>1641246420594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641246420594</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Adding User syncronization">
+      <created>1642193799235</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642193799235</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed rsa key serialization and rabbitmq messaging account service side">
+      <created>1642263540540</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642263540540</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed rsa key serialization and rabbitmq messaging account service side">
+      <created>1642263577611</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642263577611</updated>
+    </task>
+    <task id="LOCAL-00005" summary="User syncronization done">
+      <created>1642339261071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642339261071</updated>
+    </task>
+    <task id="LOCAL-00006" summary="get-infos endpoint can now send result body">
+      <created>1642341383166</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642341383167</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactoring project structure" />
+    <MESSAGE value="Adding User syncronization" />
+    <MESSAGE value="Fixed rsa key serialization and rabbitmq messaging account service side" />
+    <MESSAGE value="User syncronization done" />
+    <MESSAGE value="get-infos endpoint can now send result body" />
+    <option name="LAST_COMMIT_MESSAGE" value="get-infos endpoint can now send result body" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/account/bank/client/Web/AccountController.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

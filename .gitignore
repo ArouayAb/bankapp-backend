@@ -1,7 +1,0 @@
-./account-service/src/main/resources/
-./account-service/target/
-./account-service/.idea/
-
-./authentication-service/src/main/resources/
-./authentication-service/target/
-./authentication-service/.idea/
