@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="get-infos endpoint can now send result body">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="get-infos endpoint can now send result body" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +102,7 @@
       <workItem from="1642348585299" duration="244000" />
       <workItem from="1642349951772" duration="6770000" />
       <workItem from="1642359743398" duration="3671000" />
+      <workItem from="1642423321161" duration="388000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring project structure">
       <created>1641246420594</created>
