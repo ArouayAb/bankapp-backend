@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="authentication-service" />
         <module name="JerseySE" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JerseySE" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
