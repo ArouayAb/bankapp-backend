@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe650bb5-205a-4f13-8803-be245b1cdf36" name="Changes" comment="git madness">
       <change beforePath="$PROJECT_DIR$/../account-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/src/main/java/account/bank/client/Web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/src/main/java/account/bank/client/Web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Helpers/MessageProducer$1UserAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Helpers/MessageProducer$1UserAuth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Helpers/MessageProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Helpers/MessageProducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/AccountController$1Infos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/AccountController$1Infos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/target/classes/account/bank/client/Web/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/gateway/bank/api_gateway/Web/GatewayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/gateway/bank/api_gateway/Web/GatewayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/authentication/bank/client/Web/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/authentication/bank/client/Web/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/authentication/bank/client/Web/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/authentication/bank/client/Web/AuthenticationController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +121,7 @@
       <workItem from="1642338879531" duration="5563000" />
       <workItem from="1642348602091" duration="230000" />
       <workItem from="1642349788923" duration="5461000" />
-      <workItem from="1642359693372" duration="1087000" />
+      <workItem from="1642359693372" duration="2890000" />
     </task>
     <task id="LOCAL-00001" summary="AuthenticationService can now consume user informations">
       <created>1642192106013</created>
