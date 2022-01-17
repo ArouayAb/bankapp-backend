@@ -10,6 +10,7 @@ import authentication.bank.client.DAO.IUserDAO;
 import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.lang.JoseException;
 
+import javax.annotation.security.DenyAll;
 import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -143,8 +144,9 @@ public class AuthenticationController {
     }
 
     // listing users endpoint
+    // For testing purposes only
     @GET
-    @PermitAll
+    @DenyAll
     @Path("list-all")
     @Produces("application/json")
     public Response listAllUsers(@CookieParam("access_token") Cookie cookie) {
@@ -164,8 +166,9 @@ public class AuthenticationController {
     }
 
     // Get specific users endpoint
+    // For testing purposes only
     @GET
-    @PermitAll
+    @DenyAll
     @Path("get/{id}")
     @Produces("application/json")
     public Response getUser(@PathParam(value = "id") int id, @CookieParam("access_token") Cookie cookie) throws
@@ -184,8 +187,9 @@ public class AuthenticationController {
     }
 
     // updating user endpoint
+    // For testing purposes only
     @POST
-    @PermitAll
+    @DenyAll
     @Path("update")
     @Consumes("application/json")
     public Response updateUser(User user, @CookieParam("access_token") Cookie cookie) {
@@ -204,8 +208,9 @@ public class AuthenticationController {
     }
 
     // Deleting user endpoint
+    // For testing purposes only
     @DELETE
-    @PermitAll
+    @DenyAll
     @Path("delete")
     @Consumes("application/json")
     public Response deleteUser(final User user, @CookieParam("access_token") Cookie cookie) {
@@ -219,55 +224,6 @@ public class AuthenticationController {
                 return Response.status(401, "Token Expired").build();
             }
             return Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-    }
-
-    @GET
-    @PermitAll
-    @Path("test")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response test(@CookieParam("access_token") Cookie cookie) {
-        try {
-            // Checking if the jwt in the cookie is valid (ie. the user is authenticated)
-            SecurityHelper.processJwt(rsaJsonWebKey, cookie.getValue());
-            return Response.ok(userDAO.listAll()).build();
-        } catch (InvalidJwtException e) {
-            if (e.hasExpired()) {
-                return Response.status(401, "Token Expired").build();
-            }
-            return Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-    }
-
-    //Temporary until the two services are synchronized when a new user is being created
-    @POST
-    @PermitAll
-    @Path("tempCreate")
-    @Consumes("application/json")
-    @Produces("application/json")
-    public Response createUser(User user) throws
-            NoSuchAlgorithmException,
-            InvalidKeySpecException
-    {
-        try{
-            // Check if the user already exist
-            userDAO.findByNoCompte(user.getNoCompte());
-            return Response.status(Response.Status.CONFLICT).build();
-        }
-        catch (UserNotFoundException e) {
-
-            // Hash user password for storage in database
-            byte[] salt = SecurityHelper.generateSalt();
-            user.setSalt(Base64.getEncoder().encodeToString(salt));
-            user.setPassword(
-                    Base64.getEncoder().encodeToString(SecurityHelper.generateHash(user.getPassword(),
-                            Base64.getDecoder().decode(user.getSalt())))
-            );
-
-            // Persist user
-            userDAO.save(user);
-            return Response.ok().build();
         }
     }
 }
