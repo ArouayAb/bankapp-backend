@@ -44,7 +44,6 @@ public class UserController {
 
     // User creation endpoint
     @POST
-    @PermitAll
     @Path("create")
     @Consumes("application/json")
     @Produces("application/json")

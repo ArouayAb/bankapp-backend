@@ -2,7 +2,6 @@ package account.bank.client.Web;
 
 import account.bank.client.DAO.ITransactionDAO;
 import account.bank.client.DAO.IUserDAO;
-import account.bank.client.DAO.UserDAO;
 import account.bank.client.Entities.Account;
 import account.bank.client.DAO.IAccountDAO;
 import account.bank.client.Entities.Transaction;
@@ -13,6 +12,7 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+
 import org.jose4j.jwt.JwtClaims;
 import org.jose4j.jwt.consumer.ErrorCodeValidator;
 import org.jose4j.jwt.consumer.InvalidJwtException;
@@ -64,6 +64,7 @@ public class AccountController {
             Long id = (Long) jwtClaims.getClaimValue("id");
 
             List<Account> accounts = accountDAO.findByUserId(id.intValue());
+
             class Infos implements Serializable {
                 String fullName;
                 String phone;
@@ -149,6 +150,7 @@ public class AccountController {
                     this.solde = solde;
                 }
             }
+
             Infos infos = new Infos(accounts.get(0));
             return Response.ok(infos).build();
         } catch(IOException | ClassNotFoundException e) {
