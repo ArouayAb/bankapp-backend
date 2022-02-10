@@ -312,6 +312,9 @@ public class AccountController {
                 }
             }
             List<TransInfos> infos = new ArrayList<>();
+            if(transactions == null) {
+                return Response.ok().build();
+            }
             for (Transaction t: transactions) {
                 infos.add(new TransInfos(t.getType(), t.getAmmount(), t.getSender().getHolderName(),t.getReceiver().getHolderName()));
             }
