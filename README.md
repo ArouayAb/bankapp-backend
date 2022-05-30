@@ -9,7 +9,6 @@
 
 ## Improvement
 #### As I said the project is barebone and there is still room for a lot of improvement, the most notable ones are:
-#### - The Dockerization of the services
 #### - Implementation of a load balancer in the Api Gateway
 #### - Improving the JWT Refresh token mechanism
 #### - Implementing a service discovery mechanism 
